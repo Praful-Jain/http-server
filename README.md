@@ -8,8 +8,9 @@ This is a simple Node.js server using Express.js that provides various endpoints
 
 ```bash
 git clone https://github.com/Praful-Jain/http-server
-cd http-server-expressndencies:
+cd http-server
 `npm install`
+'node index.js'
 
 Endpoints
 /html: Returns an HTML page.
