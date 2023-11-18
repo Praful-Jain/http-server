@@ -26,10 +26,18 @@ app.get('/status/:status_code', (req, res) => {
     const status_code= parseInt(req.params.status_code, 10);
   
     if (isNaN(status_code)) {
-      res.status(400).send('Invalid status code.');
+        res.status(400).send('Invalid status code.');
     } 
     else {
-      res.status(status_code).send(`Status code: ${status_code}`);
+        if(status_code == 200) {  
+            res.status(status_code).send(`Response with status code: ${status_code} ${'OK'}`);
+        }
+        else if(status_code == 404) {
+            res.status(status_code).send(`Response with status code: ${status_code} ${'Not Found'}`);
+        }
+        else {
+            res.status(status_code).send(`Response with status code: ${status_code} ${'Unknown'}`);
+        }
     }
 });
   
